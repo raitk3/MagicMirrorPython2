@@ -3,8 +3,6 @@ import pygame as pg
 from datetime import datetime
 from size import Size
 
-locale.setlocale(locale.LC_ALL, "et_EE")
-
 class TimeKeeper():
     def __init__(self, root,  x, y):
         self.root = root

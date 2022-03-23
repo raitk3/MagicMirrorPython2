@@ -1,8 +1,18 @@
+import locale
 import pygame as pg
-from custom_modules.bus_times import BusTimes
+from sys import platform
+
 from pages import Page
 from size import Size
+from custom_modules.bus_times import BusTimes
 from custom_modules.time_keeper import TimeKeeper
+
+if platform == "win32":
+    locale.setlocale(locale.LC_ALL, "et_EE")
+else:
+    locale.setlocale(locale.LC_ALL, "et_EE.UTF-8")
+
+
 
 font_name = "Consolas"
 
