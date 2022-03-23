@@ -19,7 +19,10 @@ class MagicMirror:
         pg.init()
         self.state = Page.BUS_TIME
         self.window_size = (800, 480)
-        self.screen = pg.display.set_mode(self.window_size, pg.NOFRAME)
+        if platform == "win32":
+            self.screen = pg.display.set_mode(self.window_size, pg.NOFRAME)
+        else:
+            self.screen = pg.display.set_mode(self.window_size, pg.FULLSCREEN)
         self.clock = pg.time.Clock()
         self.running = True
         self.main_modules = [TimeKeeper(self, 0, 0)]
@@ -65,7 +68,7 @@ class MagicMirror:
         while self.running:
             self.event()
             self.update()
-            self.screen.fill(("black"))
+            self.screen.fill("black")
             self.render()
             self.clock.tick(1)
 
