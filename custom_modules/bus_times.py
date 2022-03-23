@@ -83,10 +83,10 @@ class BusTimes():
         for i, el in enumerate(self.schedule):
             color = "#56C1A6" if el[3] == "bus" else "#3466B1"
             pg.draw.rect(self.root.screen, color, pg.Rect(self.x, self.y + row_gap * i, 80, 80),  4, 12, 12, 12, 12)
-            number = self.root.get_font(Size.LARGE).render(str(el[0]), True, "white")
+            number = self.root.get_font(Size.LARGE).render(str(el[0]), True, "#FFFFFF")
             x, y = number.get_size()
             self.root.screen.blit(number, (self.x - x//2 + 40, self.y - y//2 + 35 + row_gap * i + 8))
-            terminus = self.root.get_font(Size.X_SMALL).render(el[1], True, "white")
+            terminus = self.root.get_font(Size.X_SMALL).render(el[1], True, "#FFFFFF")
             self.root.screen.blit(terminus, (self.x + col_cap, self.y + row_gap * i))
-            time_remaining = self.root.get_font(Size.XXX_SMALL).render(self.get_time_remaining_string(el[2]), True, "gray")
+            time_remaining = self.root.get_font(Size.XXX_SMALL).render(self.get_time_remaining_string(el[2]), True, "#888888")
             self.root.screen.blit(time_remaining, (self.x + col_cap, self.y + 45 + row_gap * i))

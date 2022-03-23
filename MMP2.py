@@ -68,7 +68,7 @@ class MagicMirror:
         while self.running:
             self.event()
             self.update()
-            self.screen.fill("black")
+            self.screen.fill("#000000")
             self.render()
             self.clock.tick(1)
 
